@@ -15,12 +15,12 @@ from torch.optim import lr_scheduler
 
 def arg_parse():
     parser = argparse.ArgumentParser(description="YOLO v3 Train")
-    parser.add_argument("--image_folder", type=str, default=r"D:\yolotest\data\coco.data", help="path to dataset")
+    parser.add_argument("--image_folder", type=str, default="./coco.data", help="path to dataset")
     parser.add_argument("--epochs",dest="epochs",help="epochs",default=2000)
     parser.add_argument("--cfg",dest="cfgfile",help="网络模型",
-                        default=r"D:/yolotest/cfg/yolov3.cfg",type=str)
+                        default='./cfg/yolov3.cfg',type=str)
     parser.add_argument("--weights",dest="weightsfile",help="权重文件",
-                        default=r"D:/yolotest/cfg/yolov3.weights",type=str)
+                        default='./cfg/yolov3.weights',type=str)
     parser.add_argument("--reso", dest='reso', help="resize图片大小",
                         default="416", type=str)
     parser.add_argument("--n_cpu",dest='n_cpu',type=int,default=2,help="torch多线程核数")
